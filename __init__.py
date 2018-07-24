@@ -24,6 +24,27 @@ def unzip3(ts):
   return xs, ys, zs
 
 
+def unzip4(ts):
+  xs, ys, zs, us = [], [], [], []
+  for x, y, z, u in ts:
+    xs.append(x)
+    ys.append(y)
+    zs.append(z)
+    us.append(u)
+  return xs, ys, zs, us
+
+
+def unzip5(ts):
+  xs, ys, zs, us, vs = [], [], [], [], []
+  for x, y, z, u, v in ts:
+    xs.append(x)
+    ys.append(y)
+    zs.append(z)
+    us.append(u)
+    vs.append(v)
+  return xs, ys, zs, us, vs
+
+
 def tablize_alist(alist, headers=('key', 'value'), table_format='grid'):
   table = tabulate.tabulate(alist, headers=headers, tablefmt=table_format)
   return table
