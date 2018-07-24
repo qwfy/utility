@@ -1,3 +1,6 @@
+from datetime import datetime
+from datetime import timezone
+
 import tabulate
 
 import logging
@@ -24,3 +27,8 @@ def unzip3(ts):
 def tablize_alist(alist, headers=('key', 'value'), table_format='grid'):
   table = tabulate.tabulate(alist, headers=headers, tablefmt=table_format)
   return table
+
+
+def utc_now_string():
+  x = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S_%Z')
+  return x
