@@ -53,3 +53,13 @@ def tablize_alist(alist, headers=('key', 'value'), table_format='grid'):
 def utc_now_string():
   x = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S_%Z')
   return x
+
+
+def boolean_arg(x):
+  """Supposed to be used with the `type` argument of the `argparse` module."""
+  if x == 'True':
+    return True
+  elif x == 'False':
+    return False
+  else:
+    raise ValueError('Boolean argument can only be "True" or "False"')
