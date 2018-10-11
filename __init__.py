@@ -88,3 +88,11 @@ def key_find(key, n, xss):
     if xs[n] == key:
       return xs
   return None
+
+
+def key_find_all(key, n, xss):
+  result = []
+  for xs in xss:
+    if xs[n] == key:
+      result.append(xs)
+  return result
