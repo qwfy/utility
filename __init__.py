@@ -81,3 +81,10 @@ class Poison:
 
 def is_poison(x):
   return isinstance(x, Poison)
+
+
+def key_find(key, n, xss):
+  for xs in xss:
+    if xs[n] == key:
+      return xs
+  return None
