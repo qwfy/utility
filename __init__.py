@@ -73,3 +73,11 @@ def boolean_arg(x):
     return False
   else:
     raise ValueError('Boolean argument can only be "True" or "False"')
+
+
+class Poison:
+  pass
+
+
+def is_poison(x):
+  return isinstance(x, Poison)
