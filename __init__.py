@@ -96,3 +96,27 @@ def key_find_all(key, n, xss):
     if xs[n] == key:
       result.append(xs)
   return result
+
+
+def group_by(xs, eq):
+  """
+  Group `xs` by `eq`, O(n^2).
+  """
+  groups = []
+
+  indices = set(range(len(xs)))
+
+  while indices:
+    representative_index = indices.pop()
+    representative = xs[representative_index]
+    group = [representative]
+    pops = set()
+    for index in indices:
+      cur = xs[index]
+      if eq(cur, representative):
+        pops.add(index)
+        group.append(cur)
+    indices -= pops
+    groups.append(group)
+
+  return groups
